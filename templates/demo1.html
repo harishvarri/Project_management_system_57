@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block rama2 %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us Form</title>
+    <style>
+        /* Basic styling for the form */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        input[type="text"],
+        textarea,
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Contact Us</h2>
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input name="title" type="text" placeholder="Title"><br>
+            <input name="email" type="email" placeholder="Email"><br>--
+            <textarea name="description" placeholder="abstract"></textarea><br>
+            <input type="file" name="image" required><br>
+            <input name="author" type="text" placeholder="Branch"><br>
+            <input type="submit" value="Submit">
+        </form>
+        <!--<form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required><br>
+        
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" required></textarea><br>
+        
+            <label for="image">Image:</label>
+            <input type="file" id="image" name="image"><br>
+        
+            <label for="author">Author:</label>
+            <input type="text" id="author" name="author" required><br>
+        
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+        
+            <button type="submit">Submit</button>
+        </form>-->
+        
+    </div>
+</body>
+</html>
+
+{% endblock  %}   
+<!--<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+</form>-->
+

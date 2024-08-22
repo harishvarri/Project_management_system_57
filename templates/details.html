@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ post.title }}</title>
+</head>
+<body>
+    <h1 style="font-size:25px;"><b>TITLE::</b>{{ post.title }}</h1>
+    <img width='500' height='300' alt="Centered Image" style="display: block; margin-left: auto; margin-right: auto;"src="{{ post.image.url }}" alt="{{ post.title }}">
+    <p><b style="font-size:22px">ABSTRACT::</b>{{ post.description }}</p>
+    <h1 style="font-size:22px;"><b>BRANCH::</b>{{ post.author}}</h1>
+    <h1 style="font-size:22px;"><b>CONTACT::<b>{{ post.email}}</h1>
+    <a href="{% url 'home' %}">Back to Home</a>
+</body>
+</html>
