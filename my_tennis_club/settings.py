@@ -58,7 +58,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-# IMPORTANT: Replace 'my_tennis_club' with the actual name of your main Django project folder
+# IMPORTANT: ROOT_URLCONF should point to your project's main urls.py
 ROOT_URLCONF = 'my_tennis_club.urls'
 
 TEMPLATES = [
@@ -77,7 +77,7 @@ TEMPLATES = [
     },
 ]
 
-# IMPORTANT: Replace 'my_tennis_club' with the actual name of your main Django project folder
+# IMPORTANT: WSGI_APPLICATION should point to your project's wsgi.py
 WSGI_APPLICATION = 'my_tennis_club.wsgi.application'
 
 # Database
