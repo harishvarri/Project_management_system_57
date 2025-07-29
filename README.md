@@ -10,6 +10,8 @@ The administrative tools provided ensure efficient user management, content mode
 By integrating these features, the "Project Management System" website not only enhances the way academic projects are managed and shared but also contributes to students' professional development by exposing them to a broad range of ideas and perspectives. This platform is poised to become a cornerstone of academic project management, promoting a culture of collaboration, innovation, and excellence in educational settings.
 
 
+NEW Live Link "https://project-management-system-viit-57.onrender.com"
+
 
 website link: https://harishvarri25.pythonanywhere.com/
 
