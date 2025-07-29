@@ -5,10 +5,6 @@ from django.db.models import Q
 from .forms import ProjectForm
 #from .models import Post
 #create yours views here
-
-'''def home(request):
-    post=Blog.objects.all()
-    return render(request,"base.html",{'post':post})'''
 def home(request):
     query = request.GET.get('search')
     if query:
@@ -22,7 +18,7 @@ def home(request):
     return render(request, 'base.html', context)
 def demo1(request):
     if request.method == 'POST':
-        print("harishhh")
+        
         title=request.POST['title']
         description=request.POST['description']
         image=request.FILES.get('image')

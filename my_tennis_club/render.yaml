@@ -1,0 +1,40 @@
+# render.yaml
+# This file tells Render how to build and deploy your Django project.
+
+services:
+  - type: web
+    # A unique name for your web service on Render.
+    # Good practice to keep it simple, alphanumeric with hyphens.
+    name: vignans-project-management-system-57
+    env: python
+    # Your GitHub repository URL. You've correctly provided this!
+    repo: https://github.com/harishvarri/Project_management_system_57
+    buildCommand: "pip install -r requirements.txt && python manage.py collectstatic --noinput"
+    # CRITICAL CORRECTION MADE HERE:
+    # 'my_tennis_club' is used because your project structure shows that
+    # your main Django project folder (containing wsgi.py) is named 'my_tennis_club'.
+    startCommand: "gunicorn my_tennis_club.wsgi:application"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          # This name should match the 'name' in the 'databases' section below.
+          name: pms-database-57
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true # Render will generate a strong SECRET_KEY for you
+      - key: DEBUG
+        value: "False" # Ensure DEBUG is False in production
+      - key: WEB_CONCURRENCY
+        value: 4 # Number of Gunicorn workers (can adjust based on your plan/needs)
+    # Optional: Set a health check path if you have one (e.g., /health/ or /admin/)
+    # healthCheckPath: /admin/
+    # Optional: Port your Django app listens on. Django default is 8000, Render expects it.
+    # port: 8000
+
+databases:
+  - # A unique name for your PostgreSQL database on Render.
+    # This name must match the 'fromDatabase' name in the 'envVars' section above.
+    name: pms-database-57
+    plan: free # Start with the free plan!
+    # databaseName: your_custom_db_name # Optional: If you want a specific internal PostgreSQL database name
+    # user: your_custom_db_user # Optional: If you want a specific internal PostgreSQL user

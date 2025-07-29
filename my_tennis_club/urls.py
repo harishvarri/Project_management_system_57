@@ -23,7 +23,7 @@ from django.conf import  settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',home,name='home'),
-    path("upload_page/",upload_page,name="upload_page"),
+    path("upload_page/",upload_page,name="demo1"),
     path("demo1/",demo1,name="demo1"),
     path('post/<int:id>/',details, name='details'),    
 ]
